@@ -35,6 +35,12 @@ Dodge.Play.prototype = {
   },
 
   update: function () {
+    this.obj.y -= 10
+
+    if ( this.obj.y > 400){
+      this.obj.y = 100;
+    }
+
     if (this.cursors.left.isDown){
       this.player.x -= 4;
     }
