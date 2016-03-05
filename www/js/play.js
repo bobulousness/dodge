@@ -8,7 +8,8 @@ Dodge.Play.prototype = {
   },
   preload:function (){
     this.load.image('background', 'assets/ocstrm.png');
-    this.load.spritesheet
+    this.load.spritesheet('obj', 'assets/blbrd.png');
+    this.load.spritesheet('player', 'assets/arcr.png');
   },
 
   create: function () {
@@ -16,7 +17,7 @@ Dodge.Play.prototype = {
     this.background.autoScroll(50,0);
     this.background.scale.set(1);
 
-    //onj
+    //obj
     this.obj = this.add.sprite(31,64,'obj');
     this.obj.anchor.setTo(.5, .5);
     this.obj.animations.add('blink');
