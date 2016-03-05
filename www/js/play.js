@@ -8,12 +8,12 @@ Dodge.Play.prototype = {
   },
   preload:function (){
     this.load.image('background', 'assets/ocstrm.png');
-    this.load.spritesheet('obj', 'assets/blbrd.png');
-    this.load.spritesheet('player', 'assets/arcr.png');
+    this.load.spritesheet('obj', 'assets/blbrd.png', 31, 64, 4);
+    this.load.spritesheet('player', 'assets/arcr.png', 96, 64, 23);
   },
 
   create: function () {
-    this.background = this.add.tileSprite(0,0,320,560,'ocstrm');
+    this.background = this.add.tileSprite(0,0,320,568,'background');
     this.background.autoScroll(50,0);
     this.background.scale.set(1);
 
@@ -26,7 +26,7 @@ Dodge.Play.prototype = {
     //player
     this.player = this.add.sprite(100,500,'obj');
     this.player.anchor.setTo(.0, .5);
-    this.player.animation.add('blink');
+    this.player.animationis.add('blink');
     this.player.animations.play('blink', 2, true);
 
     //keys
