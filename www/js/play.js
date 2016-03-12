@@ -1,4 +1,9 @@
-'use strict'
+'use strict';
+
+
+var random = Math.floor((Math.random() * 289) + 31);
+
+
 
 var Dodge = {};
 Dodge.Play = function () {};
@@ -25,7 +30,7 @@ Dodge.Play.prototype = {
     */
 
     //player
-    this.player = this.add.sprite(100,500,'player');
+    this.player = this.add.sprite(100,400,'player');
     this.player.anchor.setTo(0.5, 0.5);
     this.player.animations.add('blink');
     this.player.animations.play('blink', 2, true);
@@ -35,14 +40,38 @@ Dodge.Play.prototype = {
   },
 
   update: function () {
-    this.obj.y -= 10
 
+    p
+    if (this.player.x < 1
+    //obj falling
+    this.obj.y += 10;
     if ( this.obj.y > 400){
-      this.obj.y = 100;
+      this.obj.y = 10;
+      this.obj.x = game.rnd.integerInRange(31,289);
+     
+    }
+    //movement towards player
+    if (this.obj.x > this.player.x) {
+      this.obj.x -= 1;
+    } 
+    if (this.obj.x < this.player.x) {
+      this.obj.x += 1;
     }
 
+
+    //obj x boundaries
+    if (this.obj.x < 0){
+      this.obj.x = 31;
+      this.obj.y = 10;
+    }
+    if (this.obj.x > 320){
+      this.obj.x = 319;
+      this.obj.y = 10;
+    }
+    //player movement
     if (this.cursors.left.isDown){
       this.player.x -= 4;
+      p
     }
     if (this.cursors.right.isDown) {
       this.player.x += 5;
