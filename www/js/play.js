@@ -81,7 +81,11 @@ Dodge.Play.prototype = {
     if (this.cursors.right.isDown) {
       this.player.x += 5;
     };
+    game.physics.arcade.collide(this.obj, this.player, this.handleCollision);
   }
-
+  handleCollision: function() {
+    console.log ("YA GOOFED");
+    game.state.start('play')
+  }
 };
 
